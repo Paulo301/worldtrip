@@ -8,6 +8,8 @@ export function TripTypes({}: TripTypesProps) {
     <HStack
       justify='space-between'
       w='100%'
+      px={{base: '3.125rem', lg: '10'}}
+      flexWrap='wrap'
     >
       <TripType 
         imageSrc='/images/trip_types/cocktail.svg'

@@ -8,11 +8,12 @@ interface Cidades100Props {
 export function Cidades100({ cities }: Cidades100Props) {
   return (
     <Box
-      mt='20'
+      mt={{base: '8', lg: '20'}}
       width='100%'
+      px={{base: '4', lg: '0'}}
     >
       <Text
-        fontSize='4xl'
+        fontSize={{base: '2xl', lg: '4xl'}}
         fontWeight='medium'
       >
         Cidades +100
@@ -20,10 +21,11 @@ export function Cidades100({ cities }: Cidades100Props) {
       <SimpleGrid
         gap='10'
         minChildWidth='64'
-        mt='10'
+        mt={{base: '5', lg: '10'}}
+        justifyItems={{base: 'center', lg: 'flex-start'}}
       >
         {cities.map((city) => (
-          <CityCard city={city} />
+          <CityCard city={city} key={city.city} />
         ))}
       </SimpleGrid>
     </Box>

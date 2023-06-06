@@ -11,7 +11,7 @@ export default function Home() {
       <Flex 
         direction='column'
         align='center'
-        mt='28'
+        mt={{base: '9', lg: '28'}}
         maxW={1160}
         mx='auto'
         pb='10'
@@ -19,26 +19,27 @@ export default function Home() {
         <TripTypes />
         <Divider
           mt='5'
-          w='5.625rem'
+          w={{base: '3.75rem', lg: '5.625rem'}}
           h='2px'
           borderBottomWidth='0.125rem'
           borderColor='dark.heading_text'
         />
         <Text
           textAlign='center'
-          mt='12'
+          mt={{base: '6', lg: '12'}}
           fontWeight='medium'
-          fontSize='4xl'
+          fontSize={{base: 'xl', lg: '4xl'}}
         >
           Vamos nessa?<br />Então escolha seu continente
         </Text>
         <Swiper 
           slides={[
             { imgSrc: '/images/continentes/Europa.png', link: 'europa'},
-            { imgSrc: '/images/continentes/Europa.png', link: 'europa'},
-            { imgSrc: '/images/continentes/Europa.png', link: 'europa'},
-            { imgSrc: '/images/continentes/Europa.png', link: 'europa'},
-            { imgSrc: '/images/continentes/Europa.png', link: 'europa'},
+            { imgSrc: '/images/continentes/Europa.png', link: 'america_do_norte'},
+            { imgSrc: '/images/continentes/Europa.png', link: 'america_do_sul'},
+            { imgSrc: '/images/continentes/Europa.png', link: 'asia'},
+            { imgSrc: '/images/continentes/Europa.png', link: 'oceania'},
+            { imgSrc: '/images/continentes/Europa.png', link: 'africa'},
           ]}
         />
       </Flex>

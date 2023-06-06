@@ -8,7 +8,7 @@ export function Header() {
   return (
     <Flex
       maxW={1160}
-      h='100px'
+      h={{base: '3.125rem', lg: '6.25rem'}}
       justify={router.asPath !== '/' ? 'space-between' : 'center'}
       align='center'
       mx='auto'
@@ -25,11 +25,11 @@ export function Header() {
       <Image
         src='/images/Logo.svg'
         alt="Logo"
-        w='45'
-        h='12'
+        w={{base: '20', lg: '45'}}
+        h={{base: '5', lg: '12'}}
       />
       
-      {router.asPath !== '/' && <span />}
+      {router.asPath !== '/' && <Box as='span' w='10' />}
     </Flex>
   );
 }

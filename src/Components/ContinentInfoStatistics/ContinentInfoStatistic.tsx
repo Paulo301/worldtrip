@@ -1,4 +1,4 @@
-import { HStack, Text, Tooltip, VStack, Icon } from "@chakra-ui/react";
+import { HStack, Text, Tooltip, VStack, Icon, Box } from "@chakra-ui/react";
 import { RiInformationLine } from "react-icons/ri";
 import { Statistic } from ".";
 
@@ -8,7 +8,7 @@ export function ContinentInfoStatistic({ num, label, tooltip }: Statistic) {
       gap={0}
     >
       <Text
-        fontSize='5xl'
+        fontSize={{base: '2xl', lg: '5xl'}}
         fontWeight='semibold'
         color='highlight.100'
       >
@@ -18,19 +18,22 @@ export function ContinentInfoStatistic({ num, label, tooltip }: Statistic) {
         align='center'
       >
         <Text
-          fontSize='2xl'
+          fontSize={{base: 'lg', lg: '2xl'}}
           fontWeight='semibold'
         >
           {label}
         </Text>
         {!!tooltip && (
           <Tooltip label={tooltip} fontSize='md'>
-            <span style={{ height: '1rem' }}>
+            <Box 
+              as='span' 
+              h={{base: '0.625rem', lg: '1rem'}}
+            >
               <Icon 
                 as={RiInformationLine} 
                 color='dark.info50' 
               />
-            </span>
+            </Box>
           </Tooltip>
         )}
       </HStack>

@@ -9,7 +9,10 @@ export function ContinentBanner({ imgSrc, continent }: ContinentBannerProps) {
   return (
     <Box
       position='relative'
-      height='31.25rem'
+      height={{base: '9.375rem', lg: '31.25rem'}}
+      display={{ base: 'flex', lg: 'block' }}
+      alignItems='center'
+      justifyContent='center'
     >
       <Image 
         src={imgSrc}
@@ -18,9 +21,9 @@ export function ContinentBanner({ imgSrc, continent }: ContinentBannerProps) {
       />
       <Text
         position='absolute'
-        left='8.75rem'
-        bottom='3.688rem'
-        fontSize='5xl'
+        left={{ lg: '8.75rem' }}
+        bottom={{ lg: '3.688rem' }}
+        fontSize={{base: '3xl', lg: '5xl'}}
         fontWeight='semibold'
         color='light.heading_text'
         lineHeight='4.5rem'

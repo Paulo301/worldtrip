@@ -1,4 +1,4 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { Flex, HStack, Text } from "@chakra-ui/react";
 
 import { ContinentInfoStatistics, Statistic } from "./ContinentInfoStatistics";
 
@@ -9,20 +9,22 @@ interface ContinentInfoProps {
 
 export function ContinentInfo({ text, statistics }: ContinentInfoProps) {
   return (
-    <HStack
-      justify='space-between'
+    <Flex
+      justify={{base: 'flex-start', lg: 'space-between'}}
       align='center'
       w='100%'
+      direction={{base: 'column', lg: 'row'}}
+      px={{base: '4', lg: '0'}}
     >
       <Text
-        maxW='37.5rem'
+        maxW={{ lg: '37.5rem' }}
         textAlign='justify'
-        fontSize='xl'
+        fontSize={{base: 'sm', lg: 'xl'}}
         fontWeight='normal'
       >
         {text}
       </Text>
       <ContinentInfoStatistics statistics={statistics} />
-    </HStack>
+    </Flex>
   );
 }

@@ -1,4 +1,4 @@
-import { Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 
 interface TripTypeProps {
   imageSrc: string;
@@ -6,20 +6,37 @@ interface TripTypeProps {
 }
 
 export function TripType({ imageSrc, name}: TripTypeProps) {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
-    <VStack gap={0}>
-      <Image 
-        src={imageSrc}
-        sizes='5'
-      />
+    <Flex
+      direction={isWideVersion ? 'column' : 'row'}
+      align='center'
+    >
+      {isWideVersion ? (
+        <Image 
+          src={imageSrc}
+          boxSize='5.313rem'
+        />
+      ) : (
+        <Box
+          borderRadius='full'
+          backgroundColor='highlight.100'
+          w='0.5rem'
+          h='0.5rem'
+        />
+      )}
       <Text
-        mt='6'
-        fontSize='2xl'
+        mt={{base: '0', lg: '6'}}
+        ml={{base: '2', lg: '0'}}
+        fontSize={{base: 'lg', lg: '2xl'}}
         fontWeight='semibold'
-        lineHeight='8'
       >
         {name}
       </Text>
-    </VStack>
+    </Flex>
   );
 }

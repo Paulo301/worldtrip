@@ -14,7 +14,7 @@ export default function Continent() {
       <Flex 
         direction='column'
         align='center'
-        mt='20'
+        mt={{base: '6', lg: '20'}}
         maxW={1160}
         mx='auto'
         pb='10'
